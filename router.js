@@ -13,10 +13,9 @@ const USER_AGENT     = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/53
 // Jab expire ho: browser me login karo → DevTools → Network → koi bhi request
 // → Request Headers → Cookie se XSRF-TOKEN aur ivas_sms_session copy karo
 let COOKIES = {
-  "XSRF-TOKEN":       process.env.XSRF_TOKEN || "",
-  "ivas_sms_session": process.env.IVAS_SESSION || ""
+    "XSRF-TOKEN":       process.env.XSRF_TOKEN || '',
+    "ivas_sms_session": process.env.IVAS_COOKIE || ''  // <-- ganti ini
 };
-
 /* ================= HELPERS ================= */
 function getToday() {
   const d = new Date();
