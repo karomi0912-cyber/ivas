@@ -619,9 +619,13 @@ router.get("/status", async (req, res) => {
       cookieKeys: Object.keys(COOKIES)
     });
   } catch (e) {
-    res.json({ status: "❌ Session expired", error: e.message });
+    res.json({ status: "❌ Session expired", hasToken: false, cookieKeys: Object.keys(COOKIES) });
   }
 });
 
-module.exports = router;
+// Route balance
+router.get('/balance', async (req, res) => {
+  res.json({ status: "error", msg: "Token invalid" });
+});
 
+module.exports = router;
